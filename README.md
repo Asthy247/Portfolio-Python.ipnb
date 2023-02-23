@@ -1,7 +1,4 @@
 # portfolio
-Python codes for data analysis and data science,
-R prgramming for data analysis and data science,
-Power BI for data visualzation,
-SAS for data analysis and data science,
-Excel Dashboard.
+Python codes,R programming, Power BI for data visualzation,
+SAS, Excel Dashboard.
 There's more to come.
