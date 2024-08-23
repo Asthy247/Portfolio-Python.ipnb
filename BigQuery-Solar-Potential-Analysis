@@ -1,32 +1,49 @@
 Project Title: Solar Potential Analysis in BigQuery
+Overview:
+This project analyzes the solar potential of different regions using the bigquery-public-data.sunroof_solar.solar_potential_by_postal_code dataset in BigQuery. 
+The goal is to identify areas with high solar potential and provide insights for potential solar energy projects.
+Methodology:
+Data Extraction: Extracted relevant data from the BigQuery dataset, including postal_code, average_solar_potential, total_area, and other relevant columns.
+Data Cleaning and Preparation: Cleaned and prepared the data, handling missing values and ensuring data consistency.
+Exploratory Data Analysis (EDA): Conducted EDA to understand the distribution of solar potential and identify any outliers or anomalies.
+Correlation Analysis: Calculated the correlation between average_solar_potential and total_area to assess their relationship.
+SQL Code used for Exploratory Analysis:
+-- SELECT state_name, AVG(yearly_sunlight_kwh_kw_threshold_avg) AS average_sun
+-- FROM 'bigquery-public-data.sunroof_solar.solar_potential_by_postal_code'
+-- GROUP BY state_name
+-- ORDER BY average_sun DESC
+-- LIMIT 3
+SQL Code used for Regression Analysis:
+-- WITH solar_data AS (
+--   SELECT
+--     postal_code,
+--     average_solar_potential,
+--     total_area
+--   FROM
+--     `bigquery-public-data.sunroof_solar.solar_potential_by_postal_code`
+-- )
+-- 
+-- SELECT
+--   CORR(average_solar_potential, total_area) AS correlation_coefficient
+-- FROM
+--   solar_data;
+SELECT
+  CORR(yearly_sunlight_kwh_total, count_qualified) AS correlation_coefficient
+FROM
+  `bigquery-public-data.sunroof_solar.solar_potential_by_postal_code`;
 
-**Overview:**
+Key Findings:
+The correlation coefficient of 0.889223828741 indicates a strong positive correlation between average_solar_potential and total_area. This suggests that regions with larger areas tend to have higher average solar potential.
+Top States by Average Sunlight:
+The second query identifies the top three states with the highest average sunlight based on yearly_sunlight_kwh_kw_threshold_avg:
+New Mexico: 1416.69 kWh/kW
+Arizona: 1371.32 kWh/kW
+Nevada: 1363.57 kWh/kW
+ 
+Area and Solar Potential: Regions with larger total areas generally have higher solar potential.
+Sun-Drenched States: New Mexico, Arizona, and Nevada consistently rank high in terms of average sunlight, making them ideal locations for solar energy projects.
 
-This project analyzes the solar potential of different regions using the `bigquery-public-data.sunroof_solar.solar_potential_by_postal_code` dataset in BigQuery. The goal is to identify areas with high solar potential and provide insights for potential solar energy projects.
-
-**Methodology:**
-
-1. **Data Extraction:** Extracted relevant data from the BigQuery dataset, including `postal_code`, `average_solar_potential`, `total_area`, and other relevant columns.
-2. **Data Cleaning and Preparation:** Cleaned and prepared the data, handling missing values and ensuring data consistency.
-3. **Exploratory Data Analysis (EDA):** Conducted EDA to understand the distribution of solar potential and identify any outliers or anomalies.
-4. **Correlation Analysis:** Calculated the correlation between `average_solar_potential` and `total_area` to assess their relationship.
-5. **Visualization:** Created choropleth maps to visualize the spatial distribution of solar potential across different regions.
-
-**Key Findings:**
-
-* [Summarize your key findings here, such as the regions with highest solar potential, correlations between variables, and any other insights you discovered.]
-
-**Code:**
-
-* The SQL code used for data extraction, analysis, and visualization is available in the `solar_potential_analysis.sql` file.
-
-**Additional Resources:**
-
-* [Link to any relevant documentation or external resources]
-
-**Conclusion:**
-
-This project provides valuable insights into the solar potential of different regions. The findings can be used to inform decision-making for solar energy projects and investments.
-
-**Feel free to customize this README to provide a more detailed overview of your project and its specific goals and findings.**
-
+The SQL code used for data extraction, analysis, and visualization is available in the solar_potential_analysis.sql file.
+Conclusion:
+This project provides valuable insights into the solar potential of different regions.
+The findings can be used to inform decision-making for solar energy projects and investments.
