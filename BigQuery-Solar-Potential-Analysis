@@ -1,1 +1,32 @@
+**Project Title: Solar Potential Analysis in BigQuery
+
+**Overview:**
+
+This project analyzes the solar potential of different regions using the `bigquery-public-data.sunroof_solar.solar_potential_by_postal_code` dataset in BigQuery. The goal is to identify areas with high solar potential and provide insights for potential solar energy projects.
+
+**Methodology:**
+
+1. **Data Extraction:** Extracted relevant data from the BigQuery dataset, including `postal_code`, `average_solar_potential`, `total_area`, and other relevant columns.
+2. **Data Cleaning and Preparation:** Cleaned and prepared the data, handling missing values and ensuring data consistency.
+3. **Exploratory Data Analysis (EDA):** Conducted EDA to understand the distribution of solar potential and identify any outliers or anomalies.
+4. **Correlation Analysis:** Calculated the correlation between `average_solar_potential` and `total_area` to assess their relationship.
+5. **Visualization:** Created choropleth maps to visualize the spatial distribution of solar potential across different regions.
+
+**Key Findings:**
+
+* [Summarize your key findings here, such as the regions with highest solar potential, correlations between variables, and any other insights you discovered.]
+
+**Code:**
+
+* The SQL code used for data extraction, analysis, and visualization is available in the `solar_potential_analysis.sql` file.
+
+**Additional Resources:**
+
+* [Link to any relevant documentation or external resources]
+
+**Conclusion:**
+
+This project provides valuable insights into the solar potential of different regions. The findings can be used to inform decision-making for solar energy projects and investments.
+
+**Feel free to customize this README to provide a more detailed overview of your project and its specific goals and findings.**
 
