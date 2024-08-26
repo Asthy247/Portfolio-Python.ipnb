@@ -1,0 +1,40 @@
+COVID-19 Data Analysis: Comparing Recovered Cases and Active Cases
+Project Overview:
+This project analyzes COVID-19 data from the bigquery-public-data.covid19_jhu_csse.summary dataset to compare 
+recovered cases and average active cases across selected countries.
+
+Key Findings:
+•	Spain reported the highest number of recovered cases.
+•	Mexico had a lower average number of active cases compared to Spain and the United States.
+
+Data Analysis:
+
+SQL Query:
+SELECT
+  summary.recovered,
+  AVG(summary.active) AS Average_score
+FROM
+  `bigquery-public-data.covid19_jhu_csse.summary` AS summary
+WHERE summary.country_region IN ('Spain', 'Mexico', 'Columbia', 'United States')
+  AND summary.recovered IS NOT NULL
+  AND summary.active IS NOT NULL
+GROUP BY 1;
+
+
+Explanation:
+•	Filters the data for the specified countries.
+•	Calculates the average active cases for each recovered case count.
+•	Handles null values to ensure accurate results.
+
+
+Results:
+Recovered Cases	Average Active Cases
+7070616437	...
+3944062935	...
+...	...
+
+
+Future Work:
+•	Expand Analysis: Explore additional metrics like mortality rates and hospitalization rates.
+•	Time Series Analysis: Analyze data over time to identify trends and patterns.
+•	Geographic Visualization: Create maps to visualize the spatial distribution of cases.
