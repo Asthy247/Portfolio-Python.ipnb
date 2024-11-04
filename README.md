@@ -22,7 +22,7 @@ A basic EDA was performed to understand the distribution of player points per ga
 •	Histogram visualizing the distribution of player points per game (PTS) for the 2019 season
 
 # Analyzing the Histogram of NBA Player Points
-
+![image](https://github.com/user-attachments/assets/ef833cfa-402e-4ce8-9d15-6092386a7ae5)
  
 # Observations from the Histogram:
 The histogram provides a visual representation of the distribution of points scored by NBA players. Here are some key observations:
